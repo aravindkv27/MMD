@@ -4,6 +4,7 @@ from email import encoders
 from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+from valid_email import valid_email
 
 subject = "An email with attachment from Python"
 body = "This is an email with attachment sent from Python"
@@ -14,7 +15,7 @@ password = input("Type your password and press enter:")
 # Create a multipart message and set headers
 message = MIMEMultipart()
 message["From"] = sender_email
-message["To"] = receiver_email
+message["To"] = valid_email
 message["Subject"] = subject
 message["Bcc"] = receiver_email  # Recommended for mass emails
 
