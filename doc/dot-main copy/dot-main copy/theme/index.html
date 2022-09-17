@@ -3,28 +3,26 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>MMD</title>
+	<title>Dot</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<!-- ** CSS Plugins Needed for the Project ** -->
-	<!-- <link rel="icon" type="image/png" href="{{ url_for ('static', filename = 'images/favicon.ico')}}" > -->
-	<!-- <link rel="stylesheet" type="text/css" href="{{ url_for ('static', filename = 'jquery/bootstrap.min.css')}}"> -->
 
 	<!-- Bootstrap -->
-	<link rel="stylesheet" type="text/css" href="{{ url_for ('static', filename = 'plugins/bootstrap/bootstrap.min.css')}}">
+	<link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
 	<!-- themefy-icon -->
-	<link rel="stylesheet" type="text/css" href="{{ url_for ('static', filename = 'plugins/themify-icons/themify-icons.css')}}">
+	<link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
 	<!--Favicon-->
-	<link rel="icon" type="image/x-icon" href = "{{ url_for ('static', filename = 'images/favicon.png')}}">
+	<link rel="icon" href="images/favicon.png" type="image/x-icon">
 	<!-- fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
 	<!-- Main Stylesheet -->
-	<link href="static/style.css" rel="stylesheet" media="screen" />
+	<link href="assets/style.css" rel="stylesheet" media="screen" />
 </head>
 
 <body>
 	<!-- header -->
-	<header class="banner overlay bg-cover" data-background="static/images/banner.jpg">
+	<header class="banner overlay bg-cover" data-background="images/banner.jpg">
 		<nav class="navbar navbar-expand-md navbar-dark">
 			<div class="container">
 				<a class="navbar-brand" style="text-align: center" href="index.html">MMD</a>
@@ -58,14 +56,14 @@
 				<!-- topic-item -->
 				
 				<div class="col-lg-4 col-sm-6 mb-4">
-					<a href="upload_csv" class="px-4 py-5 bg-white shadow text-center d-block match-height">
+					<a href="single.html" class="px-4 py-5 bg-white shadow text-center d-block match-height">
 						<i class="ti-credit-card icon text-primary d-block mb-4"></i>
 						<h3 class="mb-3 mt-0">Upload &amp;Verification</h3>
 						
 					</a>
 				</div>
 				<div class="col-lg-4 col-sm-6 mb-4">
-					<a href="send-mail" class="px-4 py-5 bg-white shadow text-center d-block match-height">
+					<a href="single.html" class="px-4 py-5 bg-white shadow text-center d-block match-height">
 						<i class="ti-package icon text-primary d-block mb-4"></i>
 						<h3 class="mb-3 mt-0">Send Mail</h3>
 						
@@ -120,13 +118,13 @@
 
 	<!-- ** JS Plugins Needed for the Project ** -->
 	<!-- jquiry -->
-	<script src="static/plugins/jquery/jquery-1.12.4.js"></script>
+	<script src="plugins/jquery/jquery-1.12.4.js"></script>
 	<!-- Bootstrap JS -->
-	<script src="static/plugins/bootstrap/bootstrap.min.js"></script>
+	<script src="plugins/bootstrap/bootstrap.min.js"></script>
 	<!-- match-height JS -->
-	<script src="static/plugins/match-height/jquery.matchHeight-min.js"></script>
+	<script src="plugins/match-height/jquery.matchHeight-min.js"></script>
 	<!-- Main Script -->
-	<script src="static/script.js"></script>
+	<script src="assets/script.js"></script>
 </body>
 
 </html>

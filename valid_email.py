@@ -16,15 +16,17 @@ def isvalidEmail(email):
 
         invalid_email.append(email)
 
-emails = read_csv("BULKEMAIL.csv")
+def check_mail(save_file):
+    emails = read_csv("BULKEMAIL.csv")
 
-mails = emails['Email Address'].to_list()
+    mails = emails['Email Address'].to_list()
 
-# print(mails)
+    # print(mails)
 
-for mail in mails:
+    for mail in mails:
 
-    VorNotV = isvalidEmail(mail)
-    # print(VorNotV)
+        VorNotV = isvalidEmail(mail)
+        # print(VorNotV)
 
-print(invalid_email)
+    # print(valid_email)
+    # print(len(valid_email))
