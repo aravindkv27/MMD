@@ -34,10 +34,10 @@ def verify_csv():
 
         # return 'uploaded'
 
-        return invalid_email
+        # return invalid_email
 
 
-    return render_template('single.html')
+    return render_template('single.html', invalidmail = invalid_email)
 
 @app.route("/send-mail")
 def send_mail():

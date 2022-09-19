@@ -10,7 +10,7 @@ mail_subject = "Testing"
 mail_body = "Testing mail"
 user_mail = 'kvaravind27@gmail.com'
 receiver_mail_ids = ["kvaravind2002@protonmail.com", "suratvanji@gmail.com", "kishoresathish231@gmail.com"]
-user_password = ''
+user_password = 'apghotvluqxrfgou'
 
 
 
