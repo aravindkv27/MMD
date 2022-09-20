@@ -3,7 +3,7 @@ from werkzeug.utils import secure_filename
 from datetime import datetime
 import os
 from valid_email import *
-from send_mail import *
+# from send_mail import *
 
 ALLOWED_EXTENSIONS = set(['csv'])
 
@@ -35,9 +35,9 @@ def verify_csv():
         # return 'uploaded'
 
         # return invalid_email
+    # emails = [valid_email, invalid_email]
 
-
-    return render_template('single.html', invalidmail = invalid_email)
+    return render_template('single.html', invalidmail = invalid_email, validmail = valid_email)
 
 @app.route("/send-mail")
 def send_mail():

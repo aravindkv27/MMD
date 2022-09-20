@@ -17,7 +17,7 @@ def isvalidEmail(email):
         invalid_email.append(email)
 
 def check_mail(save_file):
-    emails = read_csv("BULKEMAIL.csv")
+    emails = read_csv(save_file)
 
     mails = emails['Email Address'].to_list()
 

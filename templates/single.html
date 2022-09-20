@@ -29,7 +29,7 @@
   
         <div class="col-lg-9">
           <div class="p-lg-5 p-4 bg-white">
-            <h2 class="mb-5">Upload</h2>
+            <h2 class="mb-5">Upload The CSV File</h2>
             <div class="content">
               <!-- <div>
                 
@@ -43,23 +43,46 @@
                   <!-- <span id="file-chosen">No file chosen</span> -->
                 </form>
               </div>
+
+  
             <div>
-              <table id="csvRoot" style="width:50%">
-                {% for mail in invalimail %}
-                  <tr>
+
+              <table id="csvRoot" style="float: left; width: 50%;">
+                <tr>
+                  <th>Valid Mail</th>
+                
+                </tr>
+                <tr>
+                {% for mail in validmail %}
+                  
                     <td>{{ mail }}</td>
-                    <!-- <td><input type="checkbox"/> &nbsp;</td>  -->
-                  </tr>
+
+                </tr>
                 {% endfor %}
+            
               </table>
-              <!-- <table id="csvRoot" >
 
-              {% for mail in invalidmail %}
-              {{ mail }}<br>
-              {% endfor %}
-
+              <table id="csvRoot"  style="display: right; width:50%">
+                <tr>
+                  <th>Invalid Mail</th>
+                
+                </tr>
+                <tr>
+                {% for mail in invalidmail %}
+                  
+                    <td>{{ mail }}</td>
+                </tr>
+                {% endfor %}
+                <!-- <tr>
+                {% for va_mail in validmail %}
+                  
+                    <td>{{ va_mail }}</td>
+                </tr>
+                {% endfor %} -->
+              <!-- </tr> -->
               </table>
-       -->
+             
+              
      			    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.2.0/papaparse.min.js"></script>
 
             </div>
@@ -74,7 +97,7 @@
                 }
                 </script>
             </div>
-
+          </div>
 
   <!-- ** JS Plugins Needed for the Project ** -->
   <!-- jquiry -->
