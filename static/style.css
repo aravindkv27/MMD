@@ -950,3 +950,14 @@ td {
 tr:nth-child(even) {
   background: #eeeeee;
 }
+
+label {
+  cursor: pointer;
+  /* Style as you please, it will become the visible UI component. */
+}
+
+#upload {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
