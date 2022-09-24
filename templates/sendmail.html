@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Functional Form</title>
+  <link href="static/style.css" rel="stylesheet" media="screen" />
+  <script src="static/script1.js"></script>
+</head>
+<body>
+	<section style="background-color: #5468ff ;" class="sendmailsec">
+	<h1 style="font-size: 50px; color:whitesmoke ;">Send Mail</h1><br>
+	<div class="container">
+		<form id="test-form" method="POST">
+		<div class="form-group">
+			<label for="email">From</label>
+			<input type="email" id="email" name="Email">
+		</div>
+		<div class="form-group">
+			<label for="pwd">Password</label>
+			<input type="password" id="pwd" name="pwd">
+		</div>
+		<div class="form-group">
+			<label for="subject">Subject</label>
+			<input type="text" id="subject" name="subject">
+		</div>
+		<div class="form-group">
+			<label for="body">Message</label>
+			<textarea name="message" id="message" rows="10" maxlength="200"></textarea>
+		</div>
+		</form>
+	</div>
+	<div id="status"></div>
+	</section>
+	<script src="static/script.js"></script>
+</body>
+</html>

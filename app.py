@@ -39,10 +39,10 @@ def verify_csv():
 
     return render_template('single.html', invalidmail = invalid_email, validmail = valid_email)
 
-@app.route("/send-mail")
+@app.route("/sendmail")
 def send_mail():
 
-    return render_template('single.html')
+    return render_template('sendmail.html')
 
 if __name__ == "__main__":
 
