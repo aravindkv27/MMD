@@ -6,33 +6,34 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from valid_email import valid_email
 
-mail_subject = "Testing"
-mail_body = "Testing mail"
-user_mail = 'kvaravind27@gmail.com'
-receiver_mail_ids = ["kvaravind2002@protonmail.com", "suratvanji@gmail.com", "kishoresathish231@gmail.com"]
-user_password = 'apghotvluqxrfgou'
+# values ={
+#     'subject' : "Testing",
+#     "message" : "Testing Mail",
+#     'sender_mail': 'kvaravind27@gmail.com',
+#     'sender_password': 'apghotvluqxrfgou'
+# }
 
+# valid_email = ['suratvanji@gmail.com','aravind27032002@gmail.com','roudiravi03@gmail.com']
 
+def send_mass_mail(values,attachment):
 
-def send_mass_mail(mail):
-
-    subject = mail_subject
-    body = mail_body
-    sender_email = user_mail
-    receiver_email = mail
-    password = user_password
-
+    mail_subject = values['subject']
+    mail_body = values['message']
+    user_mail = values['sender_mail']
+    receiver_mail_ids = valid_email
+    user_password = values['sender_password']
+    
+    print(receiver_mail_ids)
     # Create a multipart message and set headers
     message = MIMEMultipart()
-    message["From"] = sender_email
-    message["To"] = receiver_email
-    message["Subject"] = subject
+    message["From"] = user_mail
+    message["Subject"] = mail_subject
     # message["Bcc"] = receiver_email  # Recommended for mass emails
-
+    message['To'] = ", ".join(receiver_mail_ids)
     # Add body to email
-    message.attach(MIMEText(body, "plain"))
+    message.attach(MIMEText(mail_body, "plain"))
 
-    filename = "BULKEMAIL.csv"  # In same directory as script
+    filename = attachment  # In same directory as script
 
     # Open PDF file in binary mode
     with open(filename, "rb") as attachment:
@@ -57,9 +58,19 @@ def send_mass_mail(mail):
     # Log in to server using secure context and send email
     context = ssl.create_default_context()
     with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
-        server.login(sender_email, password)
-        server.sendmail(sender_email, receiver_email, text)
+        server.login(user_mail, user_password)
+        server.sendmail(user_mail, receiver_mail_ids, text)
 
-for mail in receiver_mail_ids:
+# def mail_data(values):
 
-    send_mass_mail(mail)
+#     mail_subject = values['subject']
+#     mail_body = values['message']
+#     user_mail = values['sender_mail']
+#     receiver_mail_ids = valid_email
+#     user_password = values['sender_password']
+  
+   
+    # print(mail_subject,mail_body,user_mail,user_password)
+# send(mass)
+
+# send_mass_mail()

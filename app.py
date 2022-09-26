@@ -1,15 +1,18 @@
+from crypt import methods
 from flask import *
 from werkzeug.utils import secure_filename
 from datetime import datetime
 import os
 from valid_email import *
-# from send_mail import *
+from send_mail import *
 
 ALLOWED_EXTENSIONS = set(['csv'])
 
 def allowed_file(filename):
 
     return '.' in filename and filename.rsplit('.',1)[1].lower() in ALLOWED_EXTENSIONS
+
+values ={}
 
 app = Flask(__name__)
 
@@ -39,9 +42,41 @@ def verify_csv():
 
     return render_template('single.html', invalidmail = invalid_email, validmail = valid_email)
 
-@app.route("/sendmail")
+@app.route("/sendmail", methods=["GET","POST"])
 def send_mail():
+    # global save_file
+    if request.method == 'POST':
+        user_mail = request.form['Email']
 
+        sender_password = request.form['pwd']
+   
+        subject = request.form['subject']
+   
+        message = request.form['message']
+
+        file = request.files['file']
+        
+        values['sender_mail'] = user_mail
+        values['sender_password'] = sender_password
+        values['subject'] = subject
+        values['message'] = message
+        # if request.method=="POST":
+        #     fl=request.files['file']
+        filename = secure_filename(file.filename)
+        attachment = os.path.join('attachment', filename)
+        file.save(attachment)
+        # values['attachement'] = save_file
+        send_mail = send_mass_mail(values, attachment)
+
+        # if request.method=="POST":
+        #     fl=request.files['file']
+        #     save_file=fl.save(fl.filename)
+        # values['attachment'] = 
+        # send_mass_mail(values,)
+        
+        # print(values)
+
+        print(values)
     return render_template('sendmail.html')
 
 if __name__ == "__main__":
