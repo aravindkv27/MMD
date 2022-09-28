@@ -41,7 +41,7 @@ def verify_csv():
     # emails = [valid_email, invalid_email]
 
     return render_template('single.html', invalidmail = invalid_email, validmail = valid_email)
-
+# send mass bulk mail
 @app.route("/sendmail", methods=["GET","POST"])
 def send_mail():
     # global save_file
