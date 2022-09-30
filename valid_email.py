@@ -26,7 +26,3 @@ def check_mail(save_file):
     for mail in mails:
 
         VorNotV = isvalidEmail(mail)
-        # print(VorNotV)
-
-    # print(valid_email)
-    # print(len(valid_email))

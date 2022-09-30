@@ -6,15 +6,6 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from valid_email import valid_email
 
-# values ={
-#     'subject' : "Testing",
-#     "message" : "Testing Mail",
-#     'sender_mail': 'kvaravind27@gmail.com',
-#     'sender_password': 'apghotvluqxrfgou'
-# }
-
-# valid_email = ['suratvanji@gmail.com','aravind27032002@gmail.com','roudiravi03@gmail.com']
-
 def send_mass_mail(values,attachment):
 
     mail_subject = values['subject']
@@ -60,17 +51,3 @@ def send_mass_mail(values,attachment):
     with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
         server.login(user_mail, user_password)
         server.sendmail(user_mail, receiver_mail_ids, text)
-
-# def mail_data(values):
-
-#     mail_subject = values['subject']
-#     mail_body = values['message']
-#     user_mail = values['sender_mail']
-#     receiver_mail_ids = valid_email
-#     user_password = values['sender_password']
-  
-   
-    # print(mail_subject,mail_body,user_mail,user_password)
-# send(mass)
-
-# send_mass_mail()

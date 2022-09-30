@@ -1,4 +1,3 @@
-from crypt import methods
 from flask import *
 from werkzeug.utils import secure_filename
 from datetime import datetime
